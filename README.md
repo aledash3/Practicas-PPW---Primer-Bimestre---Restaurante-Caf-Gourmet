@@ -1,118 +1,181 @@
-Restaurante Café Gourmet – Proyecto PPW
 
-Descripción
-Este proyecto pertenece al primer bimestre de la materia PPW (Programación Para Web).
-Es una aplicación web para un Restaurante / Café Gourmet, que incluye:
+[README.md](https://github.com/user-attachments/files/23811038/README.md)
+# Restaurante Café Gourmet -- Aplicación Web (PPW)
 
-Gestión de productos del menú
+## 📌 Descripción General
 
-Interfaz web hecha con JSP
+Este proyecto es una aplicación web desarrollada como parte del **Primer
+Bimestre de Programación Para Web (PPW)**.\
+Simula un sistema administrativo para un **Restaurante / Café Gourmet**,
+permitiendo gestionar usuarios, productos, bitácoras y navegación
+mediante JSP, con acceso a una base de datos PostgreSQL a través de
+JDBC.
 
-Conexión a base de datos PostgreSQL mediante JDBC
+El proyecto está estructurado como una **WebApp profesional**,
+integrando backend en Java y frontend dinámico basado en JSP, HTML, CSS,
+JavaScript e incluso recursos 3D.
 
-Uso de HTML, CSS, JavaScript y recursos multimedia
+------------------------------------------------------------------------
 
-Estructura completa tipo WebApp
+## 🚀 Funcionalidades Principales
 
-Tecnologías utilizadas
+### 🔐 Gestión de usuarios
 
-Java (JSP, Servlets)
+-   Inicio de sesión con validación en base de datos\
+-   Registro de usuarios\
+-   Modificación y eliminación de usuarios\
+-   Control básico de sesiones
 
-PostgreSQL
+### 🍽️ Gestión de productos
 
-JDBC
+-   Administración del catálogo del restaurante\
+-   Visualización dinámica de productos\
+-   Integración con base de datos PostgreSQL
 
-Servidor Apache Tomcat
+### 🛠️ Funciones adicionales
 
-HTML, CSS, JavaScript
+-   Bitácora de auditoría\
+-   Páginas JSP modulares (menú, mantenimiento, contacto, servicios,
+    etc.)\
+-   Archivos 3D (.glb) para vistas interactivas\
+-   Recursos multimedia (CSS, imágenes, íconos)
 
-Librerías externas (driver PostgreSQL)
+------------------------------------------------------------------------
 
-Estructura del proyecto
-Proyecto/
-src/ -> Código fuente Java
-build/classes/ -> Clases compiladas
-webapp/ -> Archivos JSP y recursos
-css/
-img/
-js/
-model3D/
-*.jsp
-WEB-INF/
-lib/ -> Librerías .jar (driver PostgreSQL)
-bakap.sql -> Script SQL de la base de datos
+## 🧩 Tecnologías Utilizadas
 
-Instrucciones de instalación
+### Backend
 
-Clonar el repositorio
-git clone https://github.com/aledash3/Practicas-PPW---Primer-Bimestre---Restaurante-Caf-Gourmet.git
+-   **Java 8+**
+-   **JSP / Servlets**
+-   **JDBC**
+-   **Apache Tomcat**
 
-cd Practicas-PPW---Primer-Bimestre---Restaurante-Caf-Gourmet
+### Base de datos
 
-Configurar la base de datos
+-   **PostgreSQL**
+-   Driver JDBC: `postgresql-42.x.jar`
 
-Instalar PostgreSQL
+### Frontend
 
-Crear la base de datos (nombre recomendado en el proyecto: bd_productos)
+-   **HTML5**
+-   **CSS3**
+-   **JavaScript**
+-   Modelos **GLB 3D**
+-   JSP dinámico
 
-Ejecutar el archivo bakap.sql si lo incluye el proyecto
+### Herramientas
 
-Configurar la conexión en Java
-Editar el archivo Conexion.java y ajustar los datos:
+-   IDE: Eclipse / IntelliJ\
+-   Git / GitHub\
+-   Servidor Tomcat 8/9
 
-user = "tu_usuario";
-pwd = "tu_contraseña";
-cadena = "jdbc:postgresql://localhost:5432/bd_productos";
+------------------------------------------------------------------------
 
-Verifica que el archivo postgresql-42.x.jar esté dentro de WEB-INF/lib.
+## 📁 Estructura del Proyecto
 
-Ejecutar el proyecto
+    Proyecto/
+    ├── src/main/java/
+    │   ├── com/productos/datoss/Conexion.java
+    │   ├── com/productos/seguridad/Usuario.java
+    │   ├── com/productos/seguridad/Auditoria.java
+    │   └── com/productos/seguridad/Pagina.java
+    │
+    ├── src/main/webapp/
+    │   ├── css/
+    │   ├── js/
+    │   ├── imagenes/
+    │   ├── model3D/ (archivos GLB)
+    │   ├── WEB-INF/lib/ (Driver PostgreSQL)
+    │   ├── *.jsp (páginas del sistema)
+    │   └── META-INF/
+    │
+    ├── build/classes/ (archivos compilados)
+    └── README.md
 
-Importar el proyecto como Dynamic Web Project en Eclipse/IntelliJ
+------------------------------------------------------------------------
 
-Seleccionar Apache Tomcat
+## 🗄️ Configuración de Base de Datos
 
-Ejecutar el proyecto y acceder desde el navegador:
+### 1️⃣ Crear base de datos en PostgreSQL
 
-http://localhost:8080/Proyecto
+    CREATE DATABASE bd_productos;
 
-Funcionalidades principales
+### 2️⃣ Ejecutar el script SQL si está disponible
 
-Inicio de sesión y validación
+    psql -U postgres -d bd_productos -f bakap.sql
 
-Gestión de productos
+### 3️⃣ Configurar credenciales en `Conexion.java`
 
-Listado de menús
+    this.user = "admin";
+    this.pwd = "admin";
+    this.cadena = "jdbc:postgresql://localhost:5432/bd_productos";
 
-Conexión a PostgreSQL
+### 4️⃣ Verificar el driver PostgreSQL
 
-Renderizado dinámico con JSP
+Debe estar en:
 
-Recursos multimedia (CSS, imágenes, modelos 3D)
+    src/main/webapp/WEB-INF/lib/postgresql-42.x.jar
 
-Cómo personalizar el proyecto
-Puedes modificar:
+------------------------------------------------------------------------
 
-La base de datos
+## ▶️ Ejecución del Proyecto
 
-El estilo CSS
+### 1️⃣ Importar en Eclipse/IntelliJ
 
-Las vistas JSP
+Seleccionar: - "Import as Dynamic Web Project"\
+- Configurar **Apache Tomcat**
 
-La lógica Java del backend
+### 2️⃣ Ejecutar el proyecto
 
-Las rutas y funcionalidades
+Acceder desde el navegador:
 
-Guía básica para contribuir
-git clone <url>
-git checkout -b nueva-rama
-git commit -m "Descripción del cambio"
-git push origin nueva-rama
+    http://localhost:8080/RestauranteCafeGourmet
 
-Crear un pull request.
+------------------------------------------------------------------------
 
-Autor
-David Cruz
-Proyecto académico universitario
-Repositorio oficial:
+## 🧪 Pruebas recomendadas
+
+-   Validación de login\
+-   Pruebas CRUD de productos\
+-   Creación y modificación de usuarios\
+-   Visualización de modelos 3D en el menú\
+-   Navegación entre módulos mediante JSP
+
+------------------------------------------------------------------------
+
+## 📌 Buenas prácticas implementadas
+
+-   Separación clara entre frontend y backend\
+-   Código organizado por paquetes\
+-   Acceso a datos encapsulado (clase `Conexion`)\
+-   Reutilización de componentes JSP (menú, encabezados, pie)\
+-   Control estructurado de errores y excepciones
+
+------------------------------------------------------------------------
+
+## 🤝 Cómo Contribuir
+
+    git clone <repo>
+    git checkout -b nueva-rama
+    git add .
+    git commit -m "Mejora: descripción del cambio"
+    git push origin nueva-rama
+
+Enviar un *Pull Request*.
+
+------------------------------------------------------------------------
+
+## 👤 Autor
+
+**David Cruz**\
+Proyecto académico universitario\
+Repositorio oficial:\
 https://github.com/aledash3/Practicas-PPW---Primer-Bimestre---Restaurante-Caf-Gourmet
+
+------------------------------------------------------------------------
+
+## 📄 Licencia
+
+Proyecto académico de libre uso para prácticas, estudios y pruebas
+técnicas.
