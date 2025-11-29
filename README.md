@@ -1,5 +1,3 @@
-
-[README.md](https://github.com/user-attachments/files/23811038/README.md)
 # Restaurante Café Gourmet -- Aplicación Web (PPW)
 
 ## 📌 Descripción General
